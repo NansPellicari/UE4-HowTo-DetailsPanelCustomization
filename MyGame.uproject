@@ -1,0 +1,18 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "{814C0B32-4840-CE54-7BBD-A3A3845ED6BC}",
+	"Category": "",
+	"Description": "",
+	"Modules": [
+		{
+			"Name": "MyGame",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		},
+		{
+			"Name": "MyGameEditor",
+			"Type": "Editor",
+			"LoadingPhase": "PostEngineInit"
+		}
+	]
+}
