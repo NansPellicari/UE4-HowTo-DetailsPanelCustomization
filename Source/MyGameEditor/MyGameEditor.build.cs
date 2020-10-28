@@ -14,6 +14,7 @@ public class MyGameEditor : ModuleRules
 				"SlateCore",
 				"UnrealEd",
 				"PropertyEditor",
+				"EditorStyle",
 				"MyGame",
 			});
 

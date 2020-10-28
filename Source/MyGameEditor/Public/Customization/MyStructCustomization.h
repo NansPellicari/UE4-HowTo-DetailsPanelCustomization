@@ -21,4 +21,13 @@ public:
 		class IDetailChildrenBuilder& StructBuilder,
 		IPropertyTypeCustomizationUtils& StructCustomizationUtils) override;
 	// END IPropertyTypeCustomization interface
+
+protected:
+	FText ChosenTypeText;
+
+	/**
+	 * This method is bind to the SetOnPropertyValueChanged on the "Type" property.
+	 * It retrieves the Type's value and store it to the "ChosenTypeText" property here.
+	 */
+	void OnTypeChanged(TSharedPtr<IPropertyHandle> TypePropertyHandle);
 };
