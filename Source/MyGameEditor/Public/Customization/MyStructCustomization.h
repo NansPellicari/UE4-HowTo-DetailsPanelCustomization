@@ -1,6 +1,7 @@
 #pragma once
 
 #include "PropertyEditor/Public/IPropertyTypeCustomization.h"
+#include "MyGame/MyStruct.h"
 
 class FMyStructCustomization : public IPropertyTypeCustomization
 {
@@ -24,6 +25,7 @@ public:
 
 protected:
 	FText ChosenTypeText;
+	EValueType ChosenType;
 
 	/**
 	 * This method is bind to the SetOnPropertyValueChanged on the "Type" property.

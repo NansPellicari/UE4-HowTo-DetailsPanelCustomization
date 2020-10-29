@@ -103,6 +103,7 @@ void FMyStructCustomization::CustomizeChildren(TSharedRef<IPropertyHandle> Struc
 			.Padding(5.f, 0.f)
 			[
 				SNew(SBox)
+				.IsEnabled(MakeAttributeLambda([=] { return ChosenType == EValueType::AMOUNT; }))
 				.MinDesiredWidth(70.f)
 				[
 					SNew(SVerticalBox)
@@ -122,6 +123,7 @@ void FMyStructCustomization::CustomizeChildren(TSharedRef<IPropertyHandle> Struc
 			.Padding(5.f, 0.f)
 			[
 				SNew(SBox)
+				.IsEnabled(MakeAttributeLambda([=] { return ChosenType == EValueType::RANGE; }))
 				.MinDesiredWidth(70.f)
 				[
 					SNew(SVerticalBox)
@@ -141,6 +143,7 @@ void FMyStructCustomization::CustomizeChildren(TSharedRef<IPropertyHandle> Struc
 			.Padding(5.f, 0.f)
 			[
 				SNew(SBox)
+				.IsEnabled(MakeAttributeLambda([=] { return ChosenType == EValueType::RANGE; }))
 				.MinDesiredWidth(70.f)
 				[
 					SNew(SVerticalBox)
@@ -166,6 +169,9 @@ void FMyStructCustomization::OnTypeChanged(TSharedPtr<IPropertyHandle> TypePrope
 	if (TypePropertyHandle.IsValid() && TypePropertyHandle->IsValidHandle())
 	{
 		TypePropertyHandle->GetValueAsDisplayText(ChosenTypeText);
+		uint8 ValueAsByte;
+		TypePropertyHandle->GetValue(ValueAsByte);
+		ChosenType = static_cast<EValueType>(ValueAsByte);
 	}
 }
 
